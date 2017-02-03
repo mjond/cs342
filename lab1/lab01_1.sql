@@ -24,6 +24,13 @@ SELECT first_name || ' ' || last_name as fullname
 	ORDER BY first_name;
 	
 --e
-SELECT city, state_province, country_id
+SELECT city, state_province, country_name FROM locations, countries, regions
+WHERE regions.region_name='Asia' AND countries.region_id = regions.region_id
+AND locations.country_id = countries.country_id;
+
+--f
+SELECT location_id FROM LOCATIONS
+WHERE state_province IS NULL;
+
 
 	
