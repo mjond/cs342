@@ -1,0 +1,33 @@
+1. Chapter 5 (focus primarily on Sections 5.1–5.2)
+
+a. Who invented the relational data model? When and where did they do their work?
+	Ted Codd of IBM Research in 1970 introduced the relational model in a classic paper that quickly caught people's attention becuase of its simplicity and mathematical foundation.
+
+b. Explain the following terms:
+relation - The database contains a collection of relations. Informally, each relation resembles a table of values or, to some extent, a flat file of records.
+
+attribute - A column header or the name of a role played by some domain in the relation schema. 
+
+domain - A set of atomic values. Atomic means each value in the domain is indivisible as far as the formal relational model is concerned. A common method of specifying a domain is to specify a data type from which the data values forming the domain are draw. Examples: usa_phone_numbers, grade_point_averages.
+
+n-tuple - An ordered list of n values where each value is an element of the domain or is a special NULL value. 
+
+NULL value - Represents attributes whose values are unknown or do not exist. 
+
+primary key - A candidate key whose values are used to identify tuples in a relation. Primary key attributes are usually underlined.
+foreign key - A foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table or the same table. In simpler words, the 					foreign key is defined in a second table, but it refers to the primary key in the first table.
+candidate - A Candidate Key can be any column or a combination of columns that can qualify as unique key in database. There can be multiple Candidate Keys in one table. 				Each Candidate Key can qualify as Primary Key.
+super keys - A superkey is a combination of columns that uniquely identifies any row within a relational database management system (RDBMS) table.
+
+referenced and referencing records - Relations that reference other relations through primary and foreign keys.
+
+c. Are tuples in a relation ordered? How about attribute values in a tuple? Explain why or why not.
+	Tuples in a relation are not ordered because mathematically, elements of a set/tuple are not ordered. Attributes of a tuple are ordered because they identify the tuple.
+
+d. Can attributes have multiple values in a single n-tuple? Why or why not?
+
+
+2. Chapter 6 (focus primarily on Sections 6.1–6.2 & 6.4) — Make sure that you know how to:
+a. Create tables with specified constraints, including primary/foreign key, not-null, domain and value-check constraints.
+b. Use the DML commands: INSERT, DELETE and UPDATE.
+c. Distinguish the ON DELETE actions: SET NULL; CASCADE.
