@@ -1,3 +1,0 @@
---The dual table is a dummy table. Dual contains single record that is used when the user
---  does not care about the data, but wants the results of a system function in a SELECT statement. 
--- Use the query "SELECT 3+4 FROM DUAL"
