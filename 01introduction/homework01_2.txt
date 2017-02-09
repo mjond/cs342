@@ -1,0 +1,15 @@
+Mark Davis
+February 9, 2017
+CS342
+
+Exercise 2.13
+
+COLLEGE(college_id, college_name, address, city, zip)
+
+COURSE(college_id, course_name, course_number, credit_hours, department)
+
+SECTION(section_id, course_number, start_time, end_time, semester, year, instructor, room_id)
+
+STUDENT(first_name, last_name, student_id, college_name, college_id)
+
+SCHEDULE(schedule_id, student_id, course_name, section_id, credit_hours, department, room_id, start_time, end_time, semester, year, instructor)

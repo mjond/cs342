@@ -1,0 +1,19 @@
+Mark Davis
+February 9, 2017
+CS342
+
+Exercise 1.14
+
+a) The columns in the databse that would need to be updated are:
+	Major from the STUDENT table
+	Course_number from the COURSE table
+	Department from the COURSE table
+	Course_number from SECTION table
+	Course_number from PREREQUISITE table
+	Prerequisite_number from PREREQUISITE table
+
+b) The PREREQUISITE table cannot be restructured to be added to the COURSE or SECTION tables since a course needs to be able to have multiple prerequisites - which is the reason to have prerequisites in a seperate table. All columns in the PREREQUISITES table are necessary so none can be deleted.
+	The SECTION table cannot be restructured to be combined with the COURSE table because its seperation from COURSE maintains entity integrity. All columns in the SECTION table are needed for primary or foreign keys or the columns contain necessary information. 
+	The COURSE table cannot be restructured because all columns are necessary for primary or foreign keys or the columns are necessary information to the database.
+
+The schema cannot be restructured so only one field needs to be updated. Each table and column are necessary to maintain entity integrity.
