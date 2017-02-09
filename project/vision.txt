@@ -1,0 +1,7 @@
+Mark Davis
+February 9, 2017
+CS342
+
+My information system project will be a NHL hockey database. It will contain players, teams, coaches, positions, awards and more. The stakeholders will be people interested in learning statistics about any of their favorite players, coaches, etc. Administrators will also be a stakeholder in order to keep the database maintained and updated. 
+
+Right now, the tables are: Team, Player, Coach and Position. Referential integrity will be important to maintain with all the relations between tables. Entity integrity will be important as well. For example, a player could play multiple positions on a team. This domain is different than ones discussed in class. 
