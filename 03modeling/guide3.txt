@@ -22,7 +22,7 @@
 	d. Model a person-household database (from class 2) using an ERD.
 		I made this in my notebook since I can't do a diagram in .txt
 	e. Skim the material in Section 3.8 on UML diagrams; we won’t use it here but we have addressed it in CS 262 and will review it in unit 11.
-Note the ERD reference sheet in Figure 3.14.
+Note the ERD reference sheet in Figure 3.14
 	
 2. Read Chapter 9.
 	a. Map the ERD model from above to a relational database model.
