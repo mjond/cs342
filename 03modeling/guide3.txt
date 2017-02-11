@@ -1,0 +1,31 @@
+1. Read Chapter 3.
+	a. Compare and contrast the database and the software design processes. Are agile modeling practices applicable to database design as well?
+	The database and software design processes are strongly related and intertwined. Database developing also means application developing because user interfaces are needed to manage the database, menus, GUIs etc. Database design and application design methodologies are very related. The major parts of each require design, implementation, and testing of the programs - which are the common steps in agile practices so agile practices do apply to database design.
+	b. Explain the following terms: entities, relationships (including cardinality and participation constraints), attributes (simple, composite, multi-valued and derived).
+	Entities - a thing or object in the real world wth an independent existence. It may be an object with a physical existence (person or car) or an object with a conceptual existence (a company or university course).
+	Relationships - a situation that exists between two database tables when one references the other through foreign or primary keys. Relationships allow databases to split and store data in different tables.
+		○ Cardinality - the number of occurences in one entity which are associated (or linked) to the number of occurences in another. Three degrees of a relationship:
+			§ 1 to 1
+			§ 1 to many
+			§ Many to many
+		○ Participation Constrains - specifies whether the existence of an entity depends on its being related to another entity via the relationship type. This constraint specifies the minimum number of relationship instances that each entity can participate in and is sometimes called the minimum cardinality constraint. There are two types of participation constraints:
+			§ Total - example to explain: every entity in the total set of employee entities must be related to a department entity because company policy states every employee must work for a department.
+			§ Partial - some or part of the set of employee entities are related to some department entity but not necessarily all. 
+	Attributes - Each entity has attributes - the particular properties that describe it. For example, an EMPLOYEE entity may be described by the employee's name, age, address etc. Different types of attributes occur in the ER model:
+		○ Composite attributes - can be divided into smaller subparts, which represent more basic attributes with independent meanings. For example, the address attribute of the EMPLOYEE example can be divided into city, street, house number, zip etc. 
+		○ Simple or atomic attributes - attributes that are not divisible
+		○ Multi-valued attributes - For example, one person may not have any college degrees, another may have one and another person may have three. Different people can have different numbers of values for an attribute. It may have low and upper bounds to constrain the number of values.
+		○ Derived attributes - The value of one attribute was derived from a related entity. For example, the value of Age can be determined from a birthdate.
+	c. Explain weak entities and identifying relationships.
+		○ Weak entities - entity types that do not have key attributes of their own. In contrast, regular entity types that do have a key attribute are called strong entity types. Weak entity types are identified by being related to specific entities from another entity type in combination with one of their attribute values. A weak entity always has total participation constraint with respect to its identifying relationship because a weak entity cannot be identified without an owner entity. 
+		○ Identifying relationships - the relationship type that relates a weak entity type to its owner. 
+	d. Model a person-household database (from class 2) using an ERD.
+		I made this in my notebook since I can't do a diagram in .txt
+	e. Skim the material in Section 3.8 on UML diagrams; we won’t use it here but we have addressed it in CS 262 and will review it in unit 11.
+Note the ERD reference sheet in Figure 3.14.
+	
+2. Read Chapter 9.
+	a. Map the ERD model from above to a relational database model.
+		Again, I made this in my notebook.
+	b. Explain how to map from a UML model to a relational database model. We will address this issue more carefully in a later unit (on object-relational mapping).
+		Mapping from a UML model to a relational database model does not require as many steps as ER model to relational database model. Each table in the UML diagram will be a table in the relational model and the attributes in the UML model will be the attributes for the corresponding relational table. In the UML model, tables that point to another table will be the referenced tables using foreign and primary keys. 
