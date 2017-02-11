@@ -1,0 +1,8 @@
+Mark Davis
+lab02, CS342
+February 9, 2017
+
+a) Yes, a constraint is possible.
+	Check that score is not NULL, then check that score is above 1000
+	
+b) Maybe if data for a certain level of employee is being entered, set a constraint that is not in the table definition. Then the constraint can be taken off for different levels of employees.
