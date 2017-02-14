@@ -79,5 +79,12 @@ INSERT INTO Warehouse VALUES (1, 'Toronto');
 INSERT INTO Warehouse VALUES (2, 'Gotham');
 
 
+--EXERCISE 5.20
+-- A)
+-- I would recommend that CIT keeps the surrogate student ID numbers. The student ID numbers are unique to each student and will never be
+-- given to a future student. Social Security Numbers should not be used since that requires students to say their SSNs outloud - when at
+-- the library or financial aid office - which is a privacy issue. 
+
+-- B) 
 
 
