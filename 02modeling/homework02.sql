@@ -18,8 +18,8 @@ CREATE TABLE Customer(
 );
 
 CREATE TABLE Order(
-	order_number integer NOT NULL, --primary keys should not be NULL
-	order_date date NOT NULL, --primary keys should not be NULL
+	order_number integer, --this value might be null since not all customers might have an order
+	order_date date,
 	customer_number integer,
 	order_amount integer,
 	PRIMARY KEY (order_number),
@@ -80,11 +80,34 @@ INSERT INTO Warehouse VALUES (2, 'Gotham');
 
 
 --EXERCISE 5.20
--- A)
+
 -- I would recommend that CIT keeps the surrogate student ID numbers. The student ID numbers are unique to each student and will never be
 -- given to a future student. Social Security Numbers should not be used since that requires students to say their SSNs outloud - when at
 -- the library or financial aid office - which is a privacy issue. 
+-- A disadvantage of using a surrogave key is that it is artificially created by the university so the primary key is not recognized universally
+-- over other databases.
 
--- B) 
+
+--EXERCISE 3, from the website
+
+--a
+SELECT order_date, order_amount FROM Order
+WHERE Order.customer_number = Customer.customer_number AND Customer.customer_name = 'Mark Davis'
+ORDER BY date DESC;
+
+--b
+SELECT customer_number FROM Customer
+WHERE Order.order_number IS NOT NULL;
+
+--c
+SELECT customer_number, customer_name FROM Customer
+WHERE Customer.customer_number = Order.customer_number AND
+	Order.order_number = Order.order_number AND
+	Order_Item.item_number = Item.item_number AND
+	Item.item_name = 'Batmobile';
+
+
+
+
 
 
