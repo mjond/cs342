@@ -3,12 +3,12 @@
 -- CS 342, Spring, 2017
 -- kvlinden
 
---drop table Person;
---drop table HouseHold;
---drop table Mentorship;
---drop table Team;
---drop table PersonTeam;
---drop table Homegroup;
+drop table Person;
+drop table HouseHold;
+drop table Mentorship;
+drop table Team;
+drop table PersonTeam;
+drop table Homegroup;
 
 create table HouseHold(
 	ID integer PRIMARY KEY,
@@ -18,6 +18,12 @@ create table HouseHold(
 	zipcode char(5),
 	phoneNumber char(12)
 	);
+
+create table Homegroup (
+	ID integer PRIMARY KEY NOT NULL,
+	name varchar(15), --name of the group
+	location varchar(25) --where the group meets
+);
 
 create table Person (
 	ID integer PRIMARY KEY,
@@ -31,15 +37,6 @@ create table Person (
 	foreign key (householdId) references HouseHold(ID) ON DELETE SET NULL,
 	foreign key (homegroupId) references Homegroup(ID) ON DELETE SET NULL
 	);
-
-create table Mentorship (
-	menteeId integer PRIMARY KEY,
-	menteeName varchar(30)
-	mentorId integer,
-	mentorName varchar(30),
-	foreign key (menteeId) references Person(ID) ON DELETE CASCADE,
-	foreign key (mentorId) references Person(ID) ON DELETE CASCADE
-);
 	
 create table Team (
 	ID integer PRIMARY KEY,
@@ -51,26 +48,21 @@ create table PersonTeam (
 	personId integer,
 	teamId integer, 
 	role varchar(15), --what the person's role is (deacon, elder)
-	duration varchar (15) --amount of time a person is part of a team. I used varchar so it can be week, months, days, years - whichever time measurement
+	duration varchar (15), --amount of time a person is part of a team. I used varchar so it can be week, months, days, years - whichever time measurement
 	foreign key (personId) references Person(ID) ON DELETE CASCADE,
 	foreign key (teamId) references Team(ID) ON DELETE CASCADE
 );
 
-create table Homegroup (
-	ID integer PRIMARY KEY NOT NULL,
-	name varchar(15), --name of the group
-	location varchar(25) --where the group meets
-);
 	
 INSERT INTO Household VALUES (0,'2347 Oxford Dr. SE','Grand Rapids','MI','49506','616-243-5680');
-
-INSERT INTO Person VALUES (0, 0, 'ownder', 'mr.','Keith','VanderLinden', 1, 'm');
-INSERT INTO Person VALUES (1, 0, 'owner', 'ms.','Brenda','VanderLinden', 1, 'm');
 
 INSERT INTO Homegroup VALUES (1, 'Bible Study', 'kvlinden house');
 
 INSERT INTO Mentorship VALUES (1, 'Brenda', 0, 'Keith');
 
 INSERT INTO Team VALUES (1, 'deacons', 'deacon');
+
+INSERT INTO Person VALUES (0, 0, 'ownder', 'mr.','Keith','VanderLinden', 1, 'm');
+INSERT INTO Person VALUES (1, 0, 'owner', 'ms.','Brenda','VanderLinden', 1, 'm');
 
 INSERT INTO PersonTeam values (0, 1, 'deacon', '1 year');
