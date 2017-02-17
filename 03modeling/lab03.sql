@@ -3,12 +3,16 @@
 -- CS 342, Spring, 2017
 -- kvlinden
 
+--Mark Davis mjd85
+--lab03 CS342
+
+drop table PersonTeam;
 drop table Person;
 drop table HouseHold;
-drop table Mentorship;
-drop table Team;
-drop table PersonTeam;
 drop table Homegroup;
+drop table Team;
+
+
 
 create table HouseHold(
 	ID integer PRIMARY KEY,
@@ -34,6 +38,8 @@ create table Person (
 	lastName varchar(15),
 	homegroupId integer,
 	membershipStatus char(1) CHECK (membershipStatus IN ('m', 'a', 'c')),
+	menteeId integer, --points to mentee
+	--foreign key (menteeId) references Person(ID) ON DELETE SET NULL,
 	foreign key (householdId) references HouseHold(ID) ON DELETE SET NULL,
 	foreign key (homegroupId) references Homegroup(ID) ON DELETE SET NULL
 	);
@@ -58,11 +64,9 @@ INSERT INTO Household VALUES (0,'2347 Oxford Dr. SE','Grand Rapids','MI','49506'
 
 INSERT INTO Homegroup VALUES (1, 'Bible Study', 'kvlinden house');
 
-INSERT INTO Mentorship VALUES (1, 'Brenda', 0, 'Keith');
-
 INSERT INTO Team VALUES (1, 'deacons', 'deacon');
 
-INSERT INTO Person VALUES (0, 0, 'ownder', 'mr.','Keith','VanderLinden', 1, 'm');
-INSERT INTO Person VALUES (1, 0, 'owner', 'ms.','Brenda','VanderLinden', 1, 'm');
+INSERT INTO Person VALUES (0, 0, 'ownder', 'mr.','Keith','VanderLinden', 1, 'm', 1);
+INSERT INTO Person VALUES (1, 0, 'owner', 'ms.','Brenda','VanderLinden', 1, 'm', 1);
 
 INSERT INTO PersonTeam values (0, 1, 'deacon', '1 year');
