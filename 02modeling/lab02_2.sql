@@ -19,7 +19,7 @@ CREATE TABLE Movie (
 	year decimal(4), 
 	score float,
 	PRIMARY KEY (id),
-	CHECK (year > 1900)
+	CHECK (year > 1900) --the check constraint is needed here instead of ENUM. ENUM doesn't support dates.
 	);
 
 CREATE TABLE Performer (
@@ -31,7 +31,7 @@ CREATE TABLE Performer (
 CREATE TABLE Casting (
 	movieId integer,
 	performerId integer,
-	status ENUM('costar', 'star', 'extra'),
+	status ENUM('costar', 'star', 'extra'), -- ENUM used here ***************************
 	FOREIGN KEY (movieId) REFERENCES Movie(Id) ON DELETE CASCADE,
 	FOREIGN KEY (performerId) REFERENCES Performer(Id) ON DELETE SET NULL,
 	);

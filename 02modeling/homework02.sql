@@ -97,12 +97,13 @@ ORDER BY date DESC;
 
 --b
 SELECT customer_number FROM Customer
-WHERE Order.order_number IS NOT NULL;
+WHERE Customer.customer_number = Order.customer_number AND
+Order.order_number IS NOT NULL;
 
 --c
 SELECT customer_number, customer_name FROM Customer
 WHERE Customer.customer_number = Order.customer_number AND
-	Order.order_number = Order.order_number AND
+	Order.order_number = Order_Item.order_number AND
 	Order_Item.item_number = Item.item_number AND
 	Item.item_name = 'Batmobile';
 
