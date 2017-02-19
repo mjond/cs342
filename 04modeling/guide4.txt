@@ -1,0 +1,55 @@
+Mark Davis
+Guide 4
+CS342
+
+1. Read Chapter 14 (focus primarily on Sections 14.1-2, 14.3.1-3, 14.5-6) — It’s ok to submit rather fuzzy or even empty answers on the material specifically marked for Wednesday’s discussion.
+	a. Explain the four informal guidelines discussed in Section 14.1.
+		○ Making sure that the semantics of the attributes is clear in the schema
+			The easier the semantics are in a relation - what a relation exactly means and stands for - the better the schema design will be. Attribute names should be unique to stop confusion between tables.
+		○ Reducing the redundant information in tuples
+			This will minimize storage space used by the base relations and corresponding files. Grouping attributes into relation schemas has a significant effect on storage space.
+		○ Reducing the NULL values in tuples
+			This wastes storage space and may lead to problems with understanding the meaning of the attributes and with specifying JOIN operations at the logical level.
+		○ Disallowing the possibliity of generating spurious tuples
+			Design relation schemas so that they can be joined with equality conditions on attributes that are appropriately related (primary key, foreign key) pairs in a way that guarantees that no spurious tables are generated. Spurious tuples represent information that is not valid.
+	b. Explain the terms functional dependency (for Monday, see Section 14.2) and multi-valued dependency (for Wednesday, see Section 14.6) by giving an example of each and showing how it satisfies the term’s formal definition.
+		○ Functional dependency - A constraint between two sets of attributes from the database. 
+			For example, consider the table: (studentID, studentName, studentAge)
+			studentID uniquely identifies the studentName attribute because if we know the studentID, we can know the studentName because studentName is functionally dependent on studentID.
+		○ Multi-valued dependency - occurs when there are more than one independent multivalued attributes in a table
+			For example, consider a bike manufacture company which produces two colors in each model every year. 
+			(bikeModel, manufactureYear, color)
+			(M1, 2001, white)
+			(M1, 2001, black)
+			(M2, 2002, white)
+			(M2, 2002, black)
+			Here, columns manufactureYear and color are independent of each other but dependant on bikeModel. So in this table, two columns are said to be multivalued dependent on bikeModel.
+	
+	c. Review the formal definitions of these terms: superkey; key (see Section 14.3.3).
+		○ Superkey - a superkey of a relation schema R={A1,A2,…,An} is a set of attributes ScR with the property that no two tuples t1 and t2 in any legal relation state r of R will have t1[S]=t2[S].
+		○ Key - a key, K, is a superkey with the additional property that removal of any attribute from K will cause K not to be a superkey anymore.
+	d. Explain BCNF (for Monday, see Section 14.5) and 4NF (for Wednesday, see Section 14.6) by giving an example relation and proving whether its schema conforms (or fails to conform) to the definitions of each normal form.
+		○ BCNF - 
+		A relational schema R is considered to be in BCNF if, for every one of its dependencies X -> Y, one of the following conditions holds true:
+			§ X -> Y is a trivial functional dependency (i.e., Y is a subset of X)
+			§ X is a superkey for schema R
+		For example, the table (author, nationality, bookTitle, genre, pages) is not in BCNF form. To be in BCNF schema, the original table would split to three tables:
+		(author, nationality)
+		(bookTitle, genre, pages)
+		(author, bookTitle)
+		The functional dependencies are the same as before.
+		○ 4NF - 
+		Fourth normal form (4NF) is a level of database normalization where there are no non-trivial multivalued dependencies other than a candidate key. It builds on the first three normal forms (1NF, 2NF and 3NF) and the Boyce-Codd Normal Form (BCNF).
+		For example, the table (courseID, instructor, textbook) contains multi-valued attributes. So place the multi-valued attributes in tables by themselves:
+		(courseID, instructor)
+		(courseID, textbook)
+		
+		a. Explain when one would one want to normalize a relational schema and when one might want to de-normalize one.
+		One would want to normalize a relational schema when the application is write intensive and the write-load is more than the read-load.
+		One would want to de-normalize a relational schema when an application is read-intensive.
+	
+2. Review Section 15.1.1 well enough to be able to define Armstrong’s axioms (IR1–3) and closures.
+Armstrong's axioms - Armstrong’s Axiom is a mathematical notation used to find the functional dependencies in a database. Conceived by William W. Armstrong, it is a list of axioms or inference rules that can be implemented on any relational database. It is denoted by the symbol F+.
+
+Closures - 
+To find the closure we find the minimum number of tables that we can reach all relationships with.
