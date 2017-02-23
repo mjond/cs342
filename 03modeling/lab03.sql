@@ -7,11 +7,11 @@
 --lab03 CS342
 
 drop table PersonTeam;
+drop table Request;
 drop table Person;
 drop table HouseHold;
 drop table Homegroup;
 drop table Team;
-
 
 
 create table HouseHold(
@@ -20,7 +20,9 @@ create table HouseHold(
 	city varchar(30),
 	state varchar(2),
 	zipcode char(5),
-	phoneNumber char(12)
+	phoneNumber char(12),
+	requestId date,
+	foreign key requestId references Request(requestId) ON DELETE SET NULL
 	);
 
 create table Homegroup (
@@ -52,15 +54,23 @@ create table Team (
 
 create table PersonTeam (
 	personId integer,
-	teamId integer, 
+	teamId integer,
 	role varchar(15), --what the person's role is (deacon, elder)
 	duration varchar (15), --amount of time a person is part of a team. I used varchar so it can be week, months, days, years - whichever time measurement
 	foreign key (personId) references Person(ID) ON DELETE CASCADE,
 	foreign key (teamId) references Team(ID) ON DELETE CASCADE
 );
 
+create table Request (
+	submitDate date PRIMARY KEY,
+	text varchar(100),
+	accessKey varchar(5),
+	responseAssignee integer,
+	foreign key responseAssignee references Person(personId) ON DELETE CASCADE
+);
+
 	
-INSERT INTO Household VALUES (0,'2347 Oxford Dr. SE','Grand Rapids','MI','49506','616-243-5680');
+INSERT INTO Household VALUES (0,'2347 Oxford Dr. SE','Grand Rapids','MI','49506','616-243-5680', 2017-02-02);
 
 INSERT INTO Homegroup VALUES (1, 'Bible Study', 'kvlinden house');
 
@@ -70,3 +80,5 @@ INSERT INTO Person VALUES (0, 0, 'ownder', 'mr.','Keith','VanderLinden', 1, 'm',
 INSERT INTO Person VALUES (1, 0, 'owner', 'ms.','Brenda','VanderLinden', 1, 'm', 1);
 
 INSERT INTO PersonTeam values (0, 1, 'deacon', '1 year');
+
+INSERT INTO Request Values (2017-02-02, "I need cookies", "abc", 0);

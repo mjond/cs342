@@ -1,0 +1,10 @@
+Mark Davis
+homework 3, cs342
+February 22, 2017
+
+1.
+a) The FLIGHT entity represents the airline and flight number along with if that flight runs on weekdays or not. The FLIGHT LEG is a non-stop portion of a flight. For example, if one was flying Toronto to Moscow with a layover in London, a flight leg would be from Toronto to London and then another flight leg from London to Moscow. A LEG INSTANCE is a specific flight leg on a specific date that also shows the number of available seats for that day's flight leg.
+
+b) The dotted underline might represent foreign keys that is not a primary key of the referencing table.
+
+c) SEAT is total participation of RESERVATION because SEAT'S existence is totally dependent on the RESERVATION relationship. SEAT cannot exist without the RESERVATION.
