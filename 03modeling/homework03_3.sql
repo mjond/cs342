@@ -2,11 +2,11 @@
 --homework 3, cs342
 --February 22, 2017
 
-drop table PartsOrdered;
+drop table Orders;
 drop table Employee;
 drop table Customer;
 drop table Part;
-drop table Order;
+drop table PartsOrdered;
 
 
 create table Employee (
@@ -23,7 +23,15 @@ create table Customer (
 	lastName varchar(20)
 );
 
-create table Order (
+
+create table Part (
+	partId integer PRIMARY KEY,
+	partName varchar(25),
+	price integer,
+	quantity integer
+);
+
+create table Orders (
 	orderId integer PRIMARY KEY,
 	customerId integer NOT NULL,
 	employeeId integer NOT NULL,
@@ -34,18 +42,11 @@ create table Order (
 	foreign key (customerId) references Customer(customerId) ON DELETE SET NULL
 );
 
-create table Part (
-	partId integer PRIMARY KEY,
-	partName varchar(25),
-	price integer,
-	quantity integer
-);
-
 create table PartsOrdered (
 	orderId integer,
 	partId integer,
 	quantityofPart integer,
-	foreign key orderId references Order(orderId) ON DELETE CASCADE,
+	foreign key orderId references Orders(orderId) ON DELETE CASCADE,
 	foreign key partId references Part(partId) ON DELETE CASCADE
 );
 
@@ -54,7 +55,7 @@ INSERT INTO Employee VALUES (2, 00001, 'john', 'doe');
 
 INSERT INTO Customer VALUES (1, 99999, 'bob', 'johnson');
 
-INSERT INTO Order VALUES (1, 1, 2, 2017-01-20, 2017-01-24, 2017-01-23);
+INSERT INTO Orders VALUES (1, 1, 2, 2017-01-20, 2017-01-24, 2017-01-23);
 
 INSERT INTO Part VALUES (10, 'Gameboy Advance', 50, 100);
 
