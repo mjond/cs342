@@ -6,11 +6,11 @@
 --Mark Davis mjd85
 --lab03 CS342
 
-drop table HouseHold;
-drop table Person;
-drop table PersonTeam;
 drop table Request;
 drop table Homegroup;
+drop table Person;
+drop table PersonTeam;
+drop table HouseHold;
 drop table Team;
 
 
@@ -62,10 +62,12 @@ create table PersonTeam (
 
 create table Request (
 	submitDate date PRIMARY KEY,
+	householdID integer,
 	text varchar(100),
 	accessKey varchar(5),
 	responseAssignee integer,
 	foreign key (responseAssignee) references Person(ID) ON DELETE CASCADE
+	foreign key (householdId) references HouseHold(ID) ON DELETE CASCADE
 );
 
 INSERT INTO Homegroup VALUES (1, 'Bible Study', 'kvlinden house');
@@ -79,5 +81,5 @@ INSERT INTO Household VALUES (0,'2347 Oxford Dr. SE','Grand Rapids','MI','49506'
 INSERT INTO Person VALUES (0, 0, 'ownder', 'mr.','Keith','VanderLinden', 1, 'm', 1);
 INSERT INTO Person VALUES (1, 0, 'owner', 'ms.','Brenda','VanderLinden', 1, 'm', 1);
 	
-INSERT INTO Request Values (2017-02-02, "I need cookies", "abc", 0);
+INSERT INTO Request Values (2017-02-02, 0, "I need cookies", "abc", 0);
 

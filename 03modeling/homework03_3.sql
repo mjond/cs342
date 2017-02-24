@@ -2,11 +2,11 @@
 --homework 3, cs342
 --February 22, 2017
 
-drop table Orders;
-drop table Employee;
-drop table Customer;
-drop table Part;
 drop table PartsOrdered;
+drop table Orders;
+drop table Customer;
+drop table Employee;
+drop table Part;
 
 
 create table Employee (
@@ -46,8 +46,8 @@ create table PartsOrdered (
 	orderId integer,
 	partId integer,
 	quantityofPart integer,
-	foreign key orderId references Orders(orderId) ON DELETE CASCADE,
-	foreign key partId references Part(partId) ON DELETE CASCADE
+	foreign key (orderId) references Orders(orderId) ON DELETE CASCADE,
+	foreign key (partId) references Part(partId) ON DELETE CASCADE
 );
 
 INSERT INTO Employee VALUES (1, 49546, 'Mark', 'Davis');
