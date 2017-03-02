@@ -12,7 +12,7 @@ DROP TABLE Player;
 DROP TABLE GameComment;
 DROP TABLE Game;
 DROP TABLE Team;
-DROP TABLE UserAccount cascade constraints;
+DROP TABLE UserAccount;
 
 
 --create tables
@@ -140,16 +140,11 @@ INSERT INTO UserAccount VALUES (1, 'mjd85', 'passphrase', 'expert', 'Mark', 'Dav
 INSERT INTO UserAccount VALUES (2, 'batman', 'batarang', 'legend', 'Bat', 'Man', 1980);
 
 --UserTeams
-INSERT INTO UserTeams VALUES (3, 1);
-INSERT INTO UserTeams VALUES (4, 2);
+INSERT INTO UserTeam VALUES (3, 1);
+INSERT INTO UserTeam VALUES (4, 2);
 
---User
+--User Comments
 INSERT INTO GameComment VALUES (1, 1, 2, 'Good game noob');
 INSERT INTO GameComment VALUES (2, 2, 4, 'Better luck next time');
 INSERT INTO GameComment VALUES (3, 1, 3, 'hocky much?');
 INSERT INTO GameComment VALUES (4, 2, 3, 'stacked team, eh');
-
-
-
-
-

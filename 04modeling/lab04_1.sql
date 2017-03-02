@@ -40,7 +40,10 @@
 -- reduces redundant information,
 -- does not allow spurious tables.
 
+drop table PersonTeam;
 drop table AltPerson;
+drop table Teams;
+drop table Person;
 
 CREATE TABLE AltPerson (
 	personId integer,
@@ -54,8 +57,56 @@ CREATE TABLE AltPerson (
     teamTime varchar(10)
 	);
 
+CREATE TABLE Person(
+	id integer PRIMARY KEY,
+	name varchar(10),
+	status char(1),
+	mentorId integer
+);
+
+CREATE TABLE Teams (
+	teamName varchar(20) PRIMARY KEY
+);
+
+CREATE TABLE PersonTeam (
+	personId integer,
+	teamName varchar(20),
+	teamRole varchar(20),
+	teamTime varchar(20),
+	FOREIGN KEY (personId) REFERENCES Person(id) ON DELETE CASCADE,
+	FOREIGN KEY (teamName) REFERENCES Teams(teamName) ON DELETE CASCADE
+);
+
+--sample records
+
 INSERT INTO AltPerson VALUES (0, 'Ramez', 'v', 1, 'Shamkant', 'm', 'elders', 'trainee', 'Monday');
 INSERT INTO AltPerson VALUES (1, 'Shamkant', 'm', NULL, NULL, NULL, 'elders', 'chair', 'Monday');
 INSERT INTO AltPerson VALUES (1, 'Shamkant', 'm', NULL, NULL, NULL, 'executive', 'protem', 'Wednesday');
 INSERT INTO AltPerson VALUES (2, 'Jennifer', 'v', 3, 'Jeff', 'm', 'deacons', 'treasurer', 'Tuesday');
 INSERT INTO AltPerson VALUES (3, 'Jeff', 'm', NULL, NULL, NULL, 'deacons', 'chair', 'Tuesday');
+
+--queries
+
+INSERT INTO Person(id, name, status, mentorId)
+select distinct personId, name, status, mentorId from AltPerson;
+
+SELECT *
+FROM Person;
+
+INSERT INTO Teams(teamName)
+select distinct teamName from AltPerson;
+
+SELECT * 
+FROM Teams;
+
+INSERT INTO PersonTeam(personId)
+select distinct personId from AltPerson;
+
+INSERT INTO PersonTeam(teamName, teamRole, teamTime)
+select distinct teamName, teamRole, teamTime from AltPerson
+where PersonTeam.personId = AltPerson.personId;
+
+select *
+from PersonTeam;
+
+

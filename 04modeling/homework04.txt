@@ -1,0 +1,47 @@
+Mark Davis
+CS342 homework 4
+
+-------------------------
+
+Exercise 14.31
+
+Book(book_title, author_name, book_type, list_price, author_affil, publisher)
+
+book_title -> publisher, book_type
+book_type -> list_price
+author_name -> author_affil
+
+a)
+This is 1NF form but not 2NF because no attributes are fully funcionally dependent on the key. 
+
+b)
+Here is the 2NF decomposition:
+	book1(book_title, author_name)
+	book2(book_title, publisher, book_type, list_price)
+	book3(author_name, author_affil)
+This eliminates partial dependency.
+
+Here is the 3NF decomposition:
+	book1(book_title, author_name)
+	book2(book_title, publisher, book_type)
+	book3(book_type, list_price)
+	book4(author_name, author_affil)
+This eliminates the dependency of list_price from the 2NF decomposition.
+
+--------------------------
+
+Exercise 14.35
+
+a) 
+A possible candidate key could be (book_name, author, copyright_year)
+or (book_name, author, edition)
+
+b)
+Book contains book_name.
+book_name -> author, book_year
+author, book_year -
+
+c)
+Book(book_name, edition)
+BookAuthor(book_name, edition, author)
+BookYear(book_name, edition, year)

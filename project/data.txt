@@ -1,0 +1,64 @@
+Mark Davis
+CS342 project design
+
+All the data was copied from www.nhl.com. On that website, I looked at specific teams such as the Canadiens, Maple Leafs or best players of all time. 
+The data I copied was goals scored, assists, save percentages and the players' positions. 
+I manually copied the data over into the tables using the INSERT command.
+
+The normal form used in the table is BCNF. I chose this form because it works best for my database.
+
+
+Team
+functional dependencies:
+	id -> name, numberOfPlayers, type
+superkey:
+	id
+Left hand side is the superkey so this table is in BCNF.
+
+
+UserAccount
+functional dependencies:
+	id -> username, password, rank, firstName, lastName, birthYear
+superkey:
+	id
+Left hand side is the superkey so this table is in BCNF.
+
+
+Player
+functional dependencies:
+	id -> firstName, lastName, goals, assists, position, teamId
+superkey:
+	id
+Left hand side is the superkey so this table is in BCNF.
+
+
+Goalie
+functional dependencies:
+	id -> firstName, lastName, savePercentage, teamId
+superkey:
+	id
+Left hand side is the superkey so this table is in BCNF.
+
+
+UserTeam
+functional dependencies:
+	none
+superkey:
+	teamId, userId
+No functional dependencies so this is in BCNF.
+
+
+Game
+functional dependencies:
+	id -> teamOneId, teamTwoId, winner, score
+superkey:
+	id
+Left hand side is the superkey so this table is in BCNF.
+
+
+GameComment
+functional dependencies:
+	id -> userId, gameId, userComment
+superkey:
+	id
+Left hand side is the superkey so this table is in BCNF.
