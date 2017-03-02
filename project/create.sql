@@ -127,3 +127,29 @@ INSERT INTO Goalie VALUES (2, 'Frederik', 'Andersen', 0.915, 1);
 INSERT INTO Goalie VALUES (3, 'Curtis', 'McElhinney', 0.938, 1);
 INSERT INTO Goalie VALUES (4, 'Cory', 'Schneider', 0.923, 3);
 INSERT INTO Goalie VALUES (5, 'Corey', 'Crawford', 0.917, 4);
+
+--Game
+INSERT INTO Game VALUES (1, 1, 2, 1, '3-2');
+INSERT INTO Game VALUES (2, 2, 3, 3, '0-20');
+INSERT INTO Game VALUES (3, 3, 4, 3, '0-25');
+INSERT INTO Game VALUES (4, 1, 4, 1, '5-2');
+INSERT INTO Game VALUES (5, 2, 4, 2, '3-1');
+
+--Users
+INSERT INTO UserAccount VALUES (1, 'mjd85', 'passphrase', 'expert', 'Mark', 'Davis', 1996);
+INSERT INTO UserAccount VALUES (2, 'batman', 'batarang', 'legend', 'Bat', 'Man', 1980);
+
+--UserTeams
+INSERT INTO UserTeams VALUES (3, 1);
+INSERT INTO UserTeams VALUES (4, 2);
+
+--User
+INSERT INTO GameComment VALUES (1, 1, 2, 'Good game noob');
+INSERT INTO GameComment VALUES (2, 2, 4, 'Better luck next time');
+INSERT INTO GameComment VALUES (3, 1, 3, 'hocky much?');
+INSERT INTO GameComment VALUES (4, 2, 3, 'stacked team, eh');
+
+
+
+
+
