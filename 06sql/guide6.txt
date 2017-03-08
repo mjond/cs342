@@ -1,0 +1,25 @@
+Guide 6
+Mark Davis
+CS342
+
+1. Advanced SQL (Section 7.1, continued) — Write sample queries that:
+
+a. Implement an inner join (Section 7.1.6).
+	Select Movie.*, Casting.movieId
+	From Movie INNER JOIN Casting
+	Where Movie.id = Casting.movieId;
+
+b. Implement an outer join (Section 7.1.6).
+	Select Movie.*, Casting.movieId
+	From Movie LEFT OUTER JOIN Casting
+	ON Movie.id = Casting.movieId;
+
+c. Use an aggregate function (Section 7.1.7).
+	Select AVG(score), title
+	From Movie;
+
+d. Use grouping (Section 7.1.8).
+	Select P.firstName, P.lastName, C.movieId COUNT(*)
+	From Performer P, Casting C
+	Where P.id = C.performerId
+	Group By movieId;
