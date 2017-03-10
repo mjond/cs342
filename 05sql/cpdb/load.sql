@@ -2,12 +2,10 @@
 -- See ../README.md for details.
 
 -- Drop the previous table declarations.
-@&cpdb\drop         
-commit;
+@drop  
+     
 -- Reload the table declarations.
-@&cpdb\schema
-commit;
--- Load the table data.
-@&cpdb\data
-commit;
+@schema
 
+-- Load the table data.
+@data
