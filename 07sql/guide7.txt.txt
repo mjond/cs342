@@ -1,0 +1,38 @@
+1. Views (Section 7.3, for Monday)
+
+	a. Write a simple view specification. For details on Oracle views, see Managing Views.
+	CREATE VIEW Movies
+	AS SELECT *
+	FROM Movie
+
+	b. Define the following terms (in the comments of your SQL command file).
+
+		i. Base Tables
+		A table whose tuples are always physically stored in the database. This limits the possible update operations that can be applied to views, but it does not provide any limitations on querying a view.
+
+		ii. Join Views
+		A view that has more than one base table
+
+		iii. Updateable Join Views
+		A join view where UPDATE, INSERT and DELETE operations are allowed
+
+		iv. Key-Preserved Tables
+		Can be repeated in the FROM clause. If the view is defined with the WITH CHECK OPTION cluase and the key preserved table is repeated, then the rows cannot be deleted from the view.
+
+		v. Views that are implemented via query modification vs materialization. (For details on Oracle materialization, see Materialized View Concepts and Architecture, focusing on the “What is a Materialized View?” and “Why Use Materialized Views” sections.)
+
+		Query modification - a query that modifies a view, such as join views
+
+		Materialization - replica of  atarget master from a single point in time. The master can be either a master table at a master site or a master materialized view at a materialized view site. They are updated through refreshes, which are one or more masters through individual batch updates. 
+		Materialization is used to:
+			- Ease network loads
+			- Create a mass deployment environment
+			- Enable data subsetting
+			- Enable disconnected computing
+		
+2. Formal languages for the relational model (Chapter 8, for Wednesday)
+	a. Relational Algebra (read Sections 8.1–8.3 & 8.5) — Write a simple query on the movies database using SELECT (σcondition), PROJECT (πfieldlist), RENAME (ρnewName) and JOIN (⋈condition) (see example queries 1 & 2 in Section 8.5).
+	b. Tuple Relational Calculus (read Sections 8.6.1–8.6.3 & 8.6.8) — Write a simple query on the movies database using the tuple relational calculus queries (see example queries 0 & 1 in Section 8.6.4).
+	c. Define the following terms):
+		i. Existential and universal quantifiers (see Section 8.6.3).
+		ii. safe expressions (see Section 8.6.8).
