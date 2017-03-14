@@ -32,7 +32,21 @@
 		
 2. Formal languages for the relational model (Chapter 8, for Wednesday)
 	a. Relational Algebra (read Sections 8.1–8.3 & 8.5) — Write a simple query on the movies database using SELECT (σcondition), PROJECT (πfieldlist), RENAME (ρnewName) and JOIN (⋈condition) (see example queries 1 & 2 in Section 8.5).
+
+	PROJECT
+	π id, title(Movie)
+	
+	RENAME
+	ρ newName
+	
 	b. Tuple Relational Calculus (read Sections 8.6.1–8.6.3 & 8.6.8) — Write a simple query on the movies database using the tuple relational calculus queries (see example queries 0 & 1 in Section 8.6.4).
+	
 	c. Define the following terms):
+
 		i. Existential and universal quantifiers (see Section 8.6.3).
+		Existential - formal expression used in asserting that something exists of which a stated general proposition can be said to be true.
+		Universal - formal expression used in asserting that a stated general proposition is true of all the members of the delineated universe or class.
+
 		ii. safe expressions (see Section 8.6.8).
+		In relational calculus, a safe expression is one that is guaranteed to yield a finite number of tuples as its result; otherwise, the expression is called unsafe. 
+
