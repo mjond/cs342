@@ -1,9 +1,9 @@
---Mark Davis
+--Mark Davis mjd85
 --homework 6, cs342
 --March 17, 2017
 -------------------
 
---Exercise 1
+--Exercise 1 
 
 --a)
 --The IDs and full names of managers and the number of employees each of them manages. Order 
