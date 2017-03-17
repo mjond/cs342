@@ -1,0 +1,12 @@
+Mark Davis
+lab 7, cs342
+March 17, 2017
+----------------
+
+Exercise 7.3
+
+a)
+pi firstName, lastName, birthdate (theta birthdate between '01-JAN-1961' and '31-DEC-1975' (birthdayCzar))
+
+b)
+{p.firstName, p.lastName, p.birthdate | Person(p) AND p.birthdate >= 1961 AND p.birthdate <= 1975}
