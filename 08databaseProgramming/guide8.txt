@@ -1,0 +1,52 @@
+Mark Davis
+guide 8
+CS342
+
+1. Read Sections 10.1, 10.4.1 & 26.1.1–2:
+		a. Name the three basic approaches to database programming.
+			1. Embedding database commands in a general purpose programming language. So database statements are embedded into the host programming language.
+			2. Using a library of database functions or classes. Al ibrary of functions is made available to the host programming language for databse calls. 
+			3. Designing a brand new language. A database programming language is designed from scratch to be compatable with the database model and query language. 
+		b. Explain the concepts of:
+			i. impedance mismatch
+			Term used to refer to the problems that occur because of differences between the database model and the programming language model.
+			ii. stored procedures
+			Procedures or functions that are stored and executed by the DBMS at the database server
+			iii. Triggers
+			A technique for specifying cetain types of active rules. In the ECA model, a rule has three components: events, conditions and actions.
+			
+			
+2. Read Server-Side Programming: PL/SQL and Java.. Focus on server-side programming, PL/SQL and triggers; skip the section on “Overview of Java in Oracle Database”.
+		a. Compare and contrast:
+			i. procedural vs non-procedural languages.
+			Procedural - the data the language is operating on is specified but not the operations or the manner in which the operations are carried out
+			Non-procedural - most statement execution dependson previous or subsequent statements on control structures, such as loops or conditional branches that are not available in sql. 
+			ii. client-side vs server-side database programming.
+			Client-side - used to embed SQL statements in applications written in procedural languages such as C, C++, Java
+			Server-side - develops data logic that resides in the database. An application can invoke stored subprograms written in PL/SQL or one can use a trigger to invoke a subprogram upon an event, action or condition
+		b. Explain why one would want to do server-side programming using PL/SQL.
+		Server-side programming is in the database so the functionality can be deployed anywhere. The database - not the application - determines the best way to perform tasks on a given OS. 
+		c. For each of the following code segments, identify the type of the database object and explain what it does.
+				i. CREATE PROCEDURE limited_count (limit IN integer) AS
+BEGIN
+  FOR i IN 1..limit LOOP
+      dbms_output.put_line(i);
+  END LOOP;
+END;
+			
+				This subprogram prints out each line of a relation.
+				 
+				i. BEGIN
+  dbms_output.put_line('Hello, PL/SQL!');
+END;
+			
+				This subprogram calls the above procedure.
+				 
+				i. CREATE TRIGGER log_trigger
+  BEFORE INSERT OR UPDATE OF lastName ON Person
+  FOR each row
+BEGIN
+  dbms_output.put_line('Hello, name change!');
+END;
+	
+				This subprogram is triggered each time there is an update or insert operation and outputs a message for each operation.
