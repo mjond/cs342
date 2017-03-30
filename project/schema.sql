@@ -37,7 +37,6 @@ CREATE TABLE Player (
 	CONSTRAINT chk_position CHECK (position IN ('rover', 'forward', 'defense', 'center', 'left wing', 'right wing'))
 );
 
-
 CREATE TABLE Goalie (
 	id integer PRIMARY KEY,
 	firstName varchar(15),

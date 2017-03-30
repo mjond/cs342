@@ -23,6 +23,9 @@ INSERT INTO UserAccount VALUES (12, 'newPlayer', 'bilboBaggins', 'beginner', 'An
 INSERT INTO Posit VALUES ('rover');
 INSERT INTO Posit VALUES ('forward');
 INSERT INTO Posit VALUES ('defense');
+INSERT INTO Posit VALUES ('center');
+INSERT INTO Posit VALUES ('left wing');
+INSERT INTO Posit VALUES ('right wing');
 
 -----------------------------------------------------------------------------
 
