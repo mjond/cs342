@@ -4,9 +4,9 @@
 
 Demonstrate your ability to use the following SQL features somewhere in your queries/view.
 c	a join of at least four tables
-	proper comparisons of NULL values
+c	proper comparisons of NULL values
 c	a self-join using tuple variables
-	a combination of inner and outer joins
+c	a combination of inner and outer joins
 c	a nested select statement
 c	aggregate statistics on grouped data
 
@@ -40,5 +40,16 @@ group by t.name
 order by avgGoals desc;
 
 --left outer join
---
---
+--this is helpful for users to see all players who are and are not on a team
+--this query returns all players, even if they do not belong to a team (have to team id)
+select t.name, p.firstName, p.lastName
+from Player p left outer join Team t
+on t.id = p.teamId;
+
+--non-materialized view
+--I chose materialized because the user's will get results faster when queried
+--this is helpful to users to query to find out information of players and their teams
+create materialized view playerTeam as
+	select p.firstName, p.lastName, p.id, p.goals, p.assists, p.teamId, t.name, t.type
+	from Player p, Team t
+	where p.teamId=t.id;

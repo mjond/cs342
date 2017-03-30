@@ -125,6 +125,14 @@ INSERT INTO Player VALUES (13, 'Gordon', 'Howe', 801, 1049, 'forward', 12);
 INSERT INTO Player VALUES (14, 'Ray', 'Bourque', 717, 873, 'defense', 12);
 INSERT INTO Player VALUES (15, 'Paul', 'Coffey', 396, 1135, 'defense', 12);
 
+--players who aren't on a team
+INSERT INTO Player VALUES (58, 'Jon', 'Johnny', 2, 9, 'defense', NULL);
+INSERT INTO Player VALUES (59, 'Bob', 'Bobby', 0, 8, 'defense', NULL);
+INSERT INTO Player VALUES (60, 'Sam', 'Samson', 0, 3, 'defense', NULL);
+INSERT INTO Player VALUES (61, 'Spider', 'Man', 23, 30, 'rover', NULL);
+INSERT INTO Player VALUES (62, 'Dr.', 'Oz', 78, 95, 'forward', NULL);
+
+
 ------------------------------------------------------------------------
 
 --Goalies
