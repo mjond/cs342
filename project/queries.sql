@@ -13,14 +13,14 @@ where ua.id=gc.userId and
 	g.teamTwoId=t2.id;
 
 --nested select statment
---this helpful to users looking to make a team
---this query returns all players who have at least 1 goal and at least 1 assist for drafting purposes
+--this helpful to users looking for players on real teams only
+--this query returns all players who are on real teams, not fantasy teams
 select p.firstName, p.lastName, p.position, p.goals, p.assists
 from Player p 
 where not exists (select *
-		from Player pe
-		where pe.goals <> 0 and
-		pe.assists <> 0);
+		from Player pe, Team t
+		where pe.teamId=t.id and
+		t.type = 'fantasy');
 
 --aggregate statistics on grouped data
 --this is helpful for users to find out average goals per team
