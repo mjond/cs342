@@ -2,14 +2,6 @@
 --CS342 project queries
 --March 31, 2017
 
-Demonstrate your ability to use the following SQL features somewhere in your queries/view.
-c	a join of at least four tables
-c	proper comparisons of NULL values
-c	a self-join using tuple variables
-c	a combination of inner and outer joins
-c	a nested select statement
-c	aggregate statistics on grouped data
-
 --four inner joins using tuple variables
 --this is helpful to administrators to monitor comments on games
 --this query returns all user comments on games including the teams that played in the game and the score
@@ -25,10 +17,10 @@ where ua.id=gc.userId and
 --this query returns all players who have at least 1 goal and at least 1 assist for drafting purposes
 select p.firstName, p.lastName, p.position, p.goals, p.assists
 from Player p 
-where (select *
+where not exists (select *
 		from Player pe
-		where pe.goals <> 0 or pe.goals is not null and
-		pe.assists <> 0 or p.assists is not null);
+		where pe.goals <> 0 and
+		pe.assists <> 0);
 
 --aggregate statistics on grouped data
 --this is helpful for users to find out average goals per team
