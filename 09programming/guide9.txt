@@ -1,0 +1,36 @@
+1. Chapter 17
+	a. B+ Trees — Focus on the Section 17.3 (skipping the material on algorithms).
+		i. Compare and contrast B-trees and B+-trees.
+		B-tree - is a search tree with additional constraints that ensure that the tree is always balanced and that the space wasted by deletion, if any, never becomes excessive. 
+		B+ -tree - similar to a B-tree but data pointers are stored only at the leaf nodes of the tree; hence, the structure of leaf nodes differs from the structure of internal nodes.
+		ii. Explain what it means for such a tree to be balanced.
+		A tree is balanced when all the leaf nodes of a tree are at the same level.
+		iii. Compare and contrast tree and data pointers.
+		Tree pointer - a pointer to another node in the b-tree
+		Date pointer - a pointer to the record whose search key field value is equal to the data file block containing that record
+	b. Explain the nature of multiple-attribute indexes (see the introduction to Section 17.4).
+	Multiple-attribute indexes - many files are accessed on primary or secondary keys that are single attributes. In many retrieval/update requests, multiple attributes are involved. If a certain combination of attributes is used frequently, it's easier/faster to set up a structure to access a key that is the frequently used combination of attributes
+	c. Explain the nature of hash and bitmap indexes (see Sections 17.5.1–2).
+	Hash index - secondary structure to access the file by using hashing on a search key other than the one used for the primary data file organization.
+	Bitmap index - popular data structure that facilitates querying on mulitple keys. Used for relatoins that contain a large number of rows.
+	d. Physical Database Design — Focus on the Section 17.7.
+		i. Explain the concept of physical database design (PDD).
+		Physical database design has the goal to create data storeage in a way that guarantees good performance.  Designers must analyze applications, their expected frequencies of inocation, timing constraints on execution speed and expected frequency of update operations and any constraints on attributes.
+		ii. Compare and contrast the uses for B-tree, hash and bitmap indexes in PDD.
+		b-tree uses in pdd 
+		Hash index uses in pdd
+		Bitmap indexes in pdd
+		iii. Explain whether denormalization should be considered a form of PDD.
+		Denormalization
+2. Chapter 18
+	a. Explain the concept of query optimization (see the introduction to the chapter).
+	A query has many possible execution strategies, and the process of choosing a suitable one for processing a query is known as query optimization.
+3. Oracle’s EXPLAIN PLAN
+	a. Load the small version of the Internet Movie DB defined in the repo (cs342/databases/imdb), configure the auto-trace facility in SQL*Plus (SET SERVEROUTPUT ON; & SET AUTOTRACE ON;) and generate an execuation plan for some simple query. What is the execution plan operation used and what does that operation do?
+	
+	b. Explain at least the following operations (see Oracle Execution Plan Operations).
+		§ TABLE ACCESS FULL - one of the most expensive operations. Goes through all rows and columns
+		§ TABLE ACCESS BY INDEX - retrieves a row from the table using the ROWID retrieved from the preceding index lookup
+		§ NESTED LOOPS - joins two tables by fetching the results from one table and querying the other table for each row from the first
+		§ HASH JOIN - loads the candidate records from one from one side of the join into a hash table that is then probed for each row from the other side of the join
+		§ INDEX UNIQUE SCAN - performs the B-tree traversal only. This operation is used if a unique constraint ensures that the search criteria will match no more than one entry.For Oracle’s reference documentation, see Database Performance Tuning Guide, particularly the “Using EXPLAIN PLAN” section. Note that the text also explains these operations conceptually in Chapter 18.
