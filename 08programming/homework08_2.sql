@@ -4,3 +4,11 @@
 
 --Exercise 2
 
+create table baconTable (
+	actor varchar(25),
+	baconNumber integer
+);
+
+create or replace procedure bacon (actorId in integer) as
+
+	
