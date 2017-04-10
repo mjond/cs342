@@ -1,0 +1,29 @@
+1. Sections 20.1-20.4.1 & 20.6 — Explain the following.
+	a. interleaving vs. parallelism
+	Interleaving - concurrent execution of processes. It keeps the CPU busy when a process requires an input or output operation, such as reading a block from disk. The CPU is switched to execute another process rather than remaining idle during I/O time. Interleaving also prevents a long process from delaying other processes.
+	Parallelism - occurs in a computer that contains multiple processors. Different processors execute separate threads
+	b. the lost update and dirty read problems
+	Lost update - when two transactions that access the same database items have their operations interleaved in a way that makes the value of some database items incorrect. 
+	Dirty read - when one transaction updates a database item and ten the transaction fails for some reason. Meanwhile, the updated item is acessed be another rtransaction before it is changed back to its original value. 
+	c. transactions, including commits and rollbacks
+	Transactions - an atomic unit of work that should either be completed in it sentirety or not done at all
+	Commits - a transaction reaches its commit point when all its operaitons that access the database have been executed successfully and the effect of all the transaction operations on the database have been recorded in the log
+	Rollbacks - if an error occurred, one can search the logs to see if a trasnaction committed but not written (committed) yet. Then the changes may be rolled back to original values. 
+	d. the ACID properties
+	Atomocity - a transaction is an atomic unit of processing; it should eithe rbe performed in entirety or not at all.
+	Consistency preservation - a transaction should be conistency preserving, meaning that if it is completely executed from beginning to end w/out interference from other transactions, it should take the db from one consistent state to another
+	Isolation - a transaction should appear as though ti is being executed in isolation from other transactions, even though many transactions are eecuted concurrently. 
+	Durability or permanency - changed applied to the database by a committed transaction must persist in the database
+	e. Schedule
+	When transactions are executing concurrently in an interleaved fashion, then the order of execution of operations from all the various transactions is known as a schedule. 
+2. Chapter 21 introduction and Section 21.1 — Explain the following.
+	a. Lock - variable associated with a data item that describes the status of the item with respect to possible operations that can be applied to it
+	b. two-phase locking - a transaction is said to follow the two-pase locking protocol if all locking operations precede the first unlock operation in the transaction. Such a transaction has two phases, an expanding phase, during which new locks on items can be acquired but none can be released; and a shrinking phase, during which existing locks can be released but no new locks can be acquired.
+3. Review Oracle’s Overview of Transaction Processing in PL/SQL (only; you can skip the other sections on this page) — Compare and contrast the following.
+	a. SAVEPOINT, COMMIT vs ROLLBACK [TO]
+	Savepoint - marks the current point in the processing of a transaction. Used with rollback, savepoint undoes part of a transaction
+	Commit - makes permanent changes to a database made during the current transaction
+	Rollback[to] - ends the current transaction and undoes any changes made since the transaction began
+	b. LOCK TABLE vs. FOR UPDATE 
+	Lock table - allows for entire locking of a table
+	For upate - has multiple uses with other commands. It identifies the rows that will be updated or deleted, then locks each row in the result set.
