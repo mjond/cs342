@@ -1,0 +1,19 @@
+--Exercise 10.3
+
+--3a)
+--this script will execute first
+
+--lock the movie from other transactions
+lock table Movie in exclusive mode;
+
+	--this select mimicks a read statement
+select rank
+from Movie
+where id=238071;
+
+	--this update mimicks a set
+update movie 
+set rank=rank+1
+where id=238071;
+
+unlock table Movie;

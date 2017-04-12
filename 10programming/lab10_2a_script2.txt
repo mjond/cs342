@@ -1,0 +1,14 @@
+--Exercise 10.2
+
+--2a)
+--this script will execute a step behind script 1 
+
+--	this mimicks a read statement
+select rank
+from Movie
+where id=238071;
+
+--	this mimicks a set statement. this will be the value returned, not script one
+update movie 
+set rank=rank-3
+where id=238071;

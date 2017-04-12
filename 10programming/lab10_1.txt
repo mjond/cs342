@@ -1,0 +1,42 @@
+Mark Davis
+lab 10, cs342
+April 12, 2017
+
+Exercise 10.1
+
+Session 1
+
+a) Query the movie table
+b) Delete a movie and query the modified table
+c) Rollback and query
+d) Add a new movie and query
+e) Commit
+
+Session 2
+
+a) Query the movie table
+b) Query the modified table
+c) Rollback and query
+d) Add a new movie and query
+e) Commit
+
+Predictions:
+
+a) These will be the same
+b) These will not be the same, one query will be confused where to find the already deleted record
+c) One of the queries will be confused as to what to rollback to 
+d) This will be the same 
+e) This will be the same 
+
+Outcomes:
+
+a) These queries return the same number of movies: 41.
+b) Session 1 returned 40 movies since one was deleted but session 2 still returned 41 movies.
+c) After rollback in Session 1, the queries in both sessions returned the same number of movies: 41 
+d) After inserting into session 1, 42 movies were returned and 41 movies returned in session 2.
+e) After committing in session 1, session 2 returned the values in session 1.
+
+Questions
+
+a) Yes, Oracle handles the transaction life cycle. At the start of the sqlplus session, commits are made automatically by Oracle. 
+b) No, ACID properties cannot be implemented using start-transaction/savepoint/rollback/commit without locking.
