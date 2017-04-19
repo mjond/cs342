@@ -14,8 +14,7 @@ where d.firstName='Clint' and
 
 --Instead of using Clint Eastwood's name, I could've used his id number but I do not know the id.
 --So I couldn't ran a query to return the id associated with Clint Eastwood then run the homework query.
---Indexes: 
---Heuristics: 
+--I did not use indexes since Oracle already has indexes for primary keys
 
 
 --Exercise 2
@@ -27,9 +26,8 @@ where m.id=md.movieId and
 group by d.firstName, d.lastName
 having sum(m.id) > 200;
 
---This is the simplest form of this query. Another approach is to 
---Indexes:
---Heuristics:
+--I could've used a full join here instead of an inner join but an inner join is more efficient 
+--I did not use indexes since Oracle already had indexes for primary keys.
 
 
 --Exercise 3
@@ -42,6 +40,5 @@ where a.id=r.actorId and
 group by a.firstName, a.lastName
 having count(m.id) > 10;
 
---This is the simplest form of this query. Another approach is to
---Indexes:
---Heuristics:
+--Again, I could've used a full join but an inner join is more efficient.
+--I did not use indexes since Oracle already uses indexes for primary keys.

@@ -1,0 +1,15 @@
+Mark Davis
+Project Application
+April 21, 2017
+
+--four inner joins using tuple variables
+--this is helpful to administrators to monitor comments on games
+--this query returns all user comments on games including the teams that played in the game and the score
+
+select ua.username, t.name, g.teamOneScore, t2.name, g.teamTwoScore, gc.UserComment
+from UserAccount ua, Team t, Team t2, Game g, GameComment gc
+where ua.id=gc.userId and
+	gc.gameId=g.id and
+	g.teamOneId=t.id and
+	g.teamTwoId=t2.id;
+
