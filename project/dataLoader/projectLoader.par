@@ -1,0 +1,4 @@
+DIRECTORY=exp_dir
+DUMPFILE=projectLarge.dmp
+LOGFILE=projectLarge.log
+TABLES= Team, UserAccount, Player, Goalie, UserTeam, Game, GameComment

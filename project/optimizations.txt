@@ -13,3 +13,6 @@ where ua.id=gc.userId and
 	g.teamOneId=t.id and
 	g.teamTwoId=t2.id;
 
+After running the command: explain plan for
+
+There is no need for indexing since Oracle does that on primary keys.

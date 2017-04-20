@@ -2,7 +2,8 @@
 --Project Application
 --April 21, 2017
 
---this trigger ensures that no more than 20 players can be on a team at one time
+--this trigger ensures that a user cannot have 
+--more than five teams tied to his username.
 
 create or replace trigger teamFull before insert on UserTeam for each row 
 declare
@@ -20,4 +21,3 @@ exception
 	when tooManyTeams then
 		RAISE_APPLICATION_ERROR(-20001, 'User has too many teams. The limit is five teams per user.')
 end;
-/
