@@ -1,0 +1,25 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Thu Apr 20 18:37:30 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "MJD85"."SYS_EXPORT_TABLE_01":  mjd85/******** parfile=projectLoader.par 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 448 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+. . exported "MJD85"."GAME"                              7.343 KB      12 rows
+. . exported "MJD85"."GAMECOMMENT"                       6.562 KB      12 rows
+. . exported "MJD85"."GOALIE"                            6.953 KB      12 rows
+. . exported "MJD85"."PLAYER"                            9.578 KB      62 rows
+. . exported "MJD85"."TEAM"                              6.578 KB      12 rows
+. . exported "MJD85"."USERACCOUNT"                       8.023 KB      12 rows
+. . exported "MJD85"."USERTEAM"                          5.546 KB      12 rows
+Master table "MJD85"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for MJD85.SYS_EXPORT_TABLE_01 is:
+  C:\USERS\MJD85\DOCUMENTS\PROJECT\MJD85.DMP
+Job "MJD85"."SYS_EXPORT_TABLE_01" successfully completed at 18:37:33

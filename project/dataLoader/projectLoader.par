@@ -1,4 +1,4 @@
 DIRECTORY=exp_dir
-DUMPFILE=projectLarge.dmp
-LOGFILE=projectLarge.log
-TABLES= Team, UserAccount, Player, Goalie, UserTeam, Game, GameComment
+DUMPFILE=mjd85.dmp
+LOGFILE=mjd85.log
+TABLES= mjd85.Team, mjd85.UserAccount, mjd85.Player, mjd85.Goalie, mjd85.UserTeam, mjd85.Game, mjd85.GameComment
