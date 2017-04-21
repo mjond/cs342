@@ -1,0 +1,21 @@
+Mark Davis
+April 21, 2017
+Lab 11, cs342
+
+Exercise 11.1
+
+c) The external libraries relate to J2SE and J2EE in that it includes the JDK and JAR files for working with glassfish.
+
+d) This runs at the enterprise tier.
+
+e) On this computer, the server is LocalHost:8080. When run remotely, the server is GlassFish.
+
+f) WARs - contains the web application that can be deployed on any servlet/jsp container. Contains jsp, html and javascript.
+
+g) WAR means deploying a file to the application server to test the application. 
+	The exploded WAR points the server to a folder containing the unzipped (exploded) contents of what would be inside the WAR file.
+	
+Exercise 11.2
+
+b) This application uses the JAX-RS for REST support.
+	

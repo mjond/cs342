@@ -1,0 +1,33 @@
+1. Read Your First Cup: An Introduction to the Java EE Platform — Focus on Chapter 2, “Understanding Java Platform, Enterprise Edition”
+	a. Explain the tiers discussed in the article. On which does J2EE focus? On which to the Oracle database focus?
+	Tiers - the functionality of the application is seperated into isolated functional areas. There is an enterprise tier, business tier, web tier and client tier. J2EE focuses on the enterprise tier. Oracle focuses on the business tier.
+	b. Explain the nature of a J2EE container. What sort of containers are there?
+	Java containers are the interface for b/t the component and the lower-level functionality provided by the platform to support that component. The functionality of the container is defined by the platform and is different for each component type.
+	
+2. Read The Java EE Tutorial — This tutorial provides extensive material on J2EE; focus on the sections listed here.
+	a. Sections 1.7–1.8, “Java EE 7 APIs” — Explain the purpose of these technologies (only): JPA, JTA, JAX-RS*, JDBC, JAXB.
+	JPA - Java Persistance API. Java standards-based solution for persistance to bridge the gap b/t OO programming and relational databases. 
+	JTA - Java Transaction API. Provides standard interface for demarcating transactions. The Java EE architecture provides a default auto commit to handle transaction commits and rollbacks.
+	JAX-RS - Java API for RESTful Web Services. Defines APIs for the development of web services built according to REST architecture.
+	JDBC - Java Database Connectivity. API for the programming language Java, which defines how a client may access a database.
+	JAXB - Java Architecture for XML Binding. Allows two main features: To marshal Java objects into XML and the inverse.
+	
+	b. Section 5, “Packaging Applications” — Compare and contrast JARs, WARs & EARs.
+	JARs - contains libraries, resources and accessory files like property files
+	WARs - contains the web application that can be deployed on any servlet/jsp container. Contains jsp, html and javascript.
+	EARs - .jar and .war are packaged as JAVA using .ear (Enterprise Archive)
+	
+3. Review these tutorials, on which the lab is based: Developing a Java EE Application & Creating and Running Your First RESTful Web Service.
+	a. Identify the IDE we’ll use for J2EE development.
+	IntelliJ IDEA Ultimate Edition
+	
+	b. Identify the roles of the following technologies in the J2EE application: J2SE’s JDK; GlassFish.
+	JDK - the Java development kit. Used for writing Java code
+	GlassFish - the application server 
+	
+	c. Explain the nature of a RESTful webservice.
+	Architecture used for developing web applications.
+		Uses HTTP only
+		Stateless
+		Use URIs
+		Transfer XML, JSON or both
