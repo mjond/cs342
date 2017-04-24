@@ -1,0 +1,55 @@
+Read specified sections of Java Persistence and explain the given concepts.
+	a. Chapter 3, “What is Java persistence?”
+		i. Persistence in Java and how it relates to the impedance mismatch discussed in unit 8
+		
+		ii. POJOs
+		Plain old java object - a normal java class. 
+	b. Chapter 4, “Persistence Products, Which to Use?” — Name 2–3 of the major JPA implementations and indicate which one we are using in this class.
+	Eclipse - open source. Allows Java developers to interact with various data services including databases, XML, and enterprise systems. This is the one being used in class because it interacts with enterprise systems..? 
+	OpenJPA - Apache project for supporting the JPA specification.
+	DataNucleus - provides support for persistance of Java objects using JDO or JPA APIs
+	
+	c. Chapter 5, “Mapping, Round Pegs into Square Holes” — Annotate this Java class for object-relational mapping using Java Annotations with the property access type.
+	
+	Import javax.persistence.*;
+	
+	@entity
+	public class Solder {
+	
+		@transient
+		@ManyToMany
+		private String name;
+		@transient
+		@ManyToOne
+		private String rank;
+		@id
+	          private long serialNumber;
+
+public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+public String getRank() { return rank; }
+    public void setRank(String rank) { this.rank = rank; }
+
+public String getSerialNumber() { return serialNumber; }
+    public void setSerialNumber(String serialNumber) { this.serialNumber = serialNumber; }
+}
+	
+	In particular, add annotations for the following.
+		○ Persistence Entity — Annotate the class as a persistence entity (Chapter 5 overview).
+		○ OID — Annotate the object ID (Section 5.2).
+		○ Basic fields — Annotate the non-ID fields (Section 5.6).
+		○ Relationships — Add new fields/accessors/annotations that exemplify the following JPA relationships (Section 5.7 overview & Sections 5.7.2–5.7.4).
+			§ A many-to-one relationship to a commander — The commander is another Solder object.
+			§ A many-to-many relationship to a Battle class — You don’t need to add the Battle class.
+You don’t need to run this code, but be familiar with the concepts and the annotations that implemen them.
+	d. Chapter 6, “Runtime, Doing the Hokey Pokey (EntityManager)”
+		i. Entity Manager (Chapter 6 overview)
+		Provides api for creatin queries, accessing transactions, and finding, persisting, merging and deleting objects.
+		ii. Injection — We’ll use J2EE dependency injection to access to a container-managed EntityManager (Chapter 6 overview).
+		The Entity Manager can be injected into an instance variable in an EJB SessionBean
+		iii. Persistence operations — Name the four basic persistence operations (Section 6.2).
+		Persist - insert a new object into a database
+		Merge - merges the changes made to a detached object into the persistance context
+		Remove - delete an object from a database
+		Find - retrieve an object from a database
