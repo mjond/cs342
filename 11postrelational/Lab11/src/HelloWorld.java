@@ -3,12 +3,9 @@
  */
 import jdk.nashorn.internal.objects.annotations.Getter;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+
+import static jdk.nashorn.internal.runtime.PropertyDescriptor.GET;
 
 // The Java class will be hosted at the URI path "/helloworld"
 @Path("/helloworld")
@@ -22,27 +19,39 @@ public class HelloWorld {
         return "Hello World";
     }
 
-    @Get
+    //GET request function
+    //assuming /api/ should be the path because the assignment URL is  http://localhost:8080/Lab11_war/hello/api
+    @Path("/Lab11_war/hello/api/")
+    @GET
     @Produces("text/plain")
     public String getFunction() {
         return "Getting...";
     }
 
-    @Put
+    //PUT request function
+    @PUT
+    @Path("/Lab11_war/hello/api/{number}")
+    @Consumes("text/plain")
     @Produces("text/plain")
-    public String putFunction(int input) {
+    public String putFunction(@PathParam("number") int input) {
         return "Putting: " + input;
     }
 
-    @Post
+    //POST request function
+    @POST
+    @Path("/Lab11_war/hello/api/{string}")
+    @Produces("text/plain")
     @Consumes("text/plain")
-    public String putFunction(String input) {
+    public String postFunction(@PathParam("string") String input) {
         return "Posting: " + input;
     }
 
-    @Delete
+    //DELETE request function
+    @DELETE
+    @Path("/Lab11_war/hello/api/{number}") //helloworld is the rootURL?
     @Produces("text/plain")
-    public String putFunction(int input) {
+    @Consumes("text/plain")
+    public String deleteFunction(@PathParam("number") int input) {
         return "Deleting: " + input;
     }
 }
