@@ -1,16 +1,14 @@
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.GET;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import models.Person;
 
 import java.util.List;
 
+import static javax.swing.text.html.FormSubmitEvent.MethodType.POST;
 import static jdk.nashorn.internal.runtime.PropertyDescriptor.*;
 
 /**
@@ -68,6 +66,52 @@ public class CPDBResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Person> getPeople() {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Person.class)).getResultList();
+    }
+
+    /**
+     Homework 12
+     PUT cpdb/person/x
+     Modify the given person entity, it it exists,
+     using the values in the JSON-formatted person entity passed with the request.
+     */
+    @PUT
+    @Path("cpdb/person/{id}")
+    @Produces("text/plain")
+    @Consumes("text/plain")
+    public Person modifyPerson(@PathParam("id") long x) {
+        em.merge(em.find(Person.class, x));
+        return x + "was updated";
+    }
+
+    /**
+     Homework 12
+     POST cpdb/people
+     Add the person entity passed with the request to the database
+     allowing the CPDB sequence to assign a new, unique ID number,
+     linking to an existing household with teh ID given in the
+     passed person entity.
+     */
+    @POST
+    @Path("cpdb/people")
+    @Produces("text/plain")
+    @Consumes("text/plain")
+    public Person modifyPerson(Person person) {
+        em.persist(person);
+        return "Person was added to the database";
+    }
+
+    /**
+     Homework 12
+     DELETE cpdb/person/x
+     Delete teh person entity with the given ID, if it exists
+     */
+    @DELETE
+    @Path("cpdb/person/{id}")
+    @Produces("text/plain")
+    @Consumes("text/plain")
+    public Person modifyPerson(@PathParam("id") long x) {
+        em.remove(em.find(Person.class, x));
+        return "Person was removed from the database";
     }
 
 }

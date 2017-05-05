@@ -1,0 +1,25 @@
+Mark Davis
+CS342 lab 13
+May 5, 2017
+
+
+Exercise 13.1
+
+a) em.persist() - this function creates a new entity, adds it to the context and future updates will be tracked
+    store.put() - the put function is used to put a key-value pair into the store.
+
+b) myHashTable.put() is similar to store.put() in that both put() commands bind a key and a value to the store or the hashtable.
+
+
+Exercise 13.2
+
+a) KVLite keys - kvLite keys point to a single value in a column
+    relational database keys - relational keys point to an entire record that can be retrieved as one entity
+
+
+Exercise 13.3
+
+a) I'm not yet sure...
+
+b) One might create an empty value if one does not know the value yet but still wants to create the column to be consistent with other records.
+    Null values are also useful in NoSQL for many-to-many relationships.
