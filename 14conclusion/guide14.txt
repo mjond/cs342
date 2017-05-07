@@ -1,0 +1,19 @@
+1. Read Section 30.1:
+	a. Name and explain the for kinds of control measures required for database security.
+	1) Access conrol - the DBMS must include provisions for restricting access to the database system as a whole. This function is called access control, is handled by creating user accounts and passwords to control the login process by the DBMS.
+	2) Inference control - the attempt to prevent users to infer classified information form rightfully accessible chunks of information with lower classification
+	3) Flow control - prevents information from flowing in such a way that it reaches unauthorized users. 
+	4) Data encryption - used to protect sensitive data (ie credit card numbers) that is transmitted via some type of communications network
+
+	a. Compare and contrast information security and information privacy.
+	Information security - refers to many aspects of protecting a system from unauthorized use, including authentication of users, information encryption, access control, firewall policies and intrusion detection
+	Information privacy - privacy goes beyond security. It examines how well the use of personal information that the system acquires about a user conforms to the explicit or implicit assumptions regarding that use. From end user perspective, privacy can be considered from two different perspectives: preventing storage of personal information vs ensuring appropriate use of personal information
+	
+2. Read Imperva’s Top 5 Database Security Threats.
+	a. Name and explain the security threats discussed in the article.
+		1. Excessive, inappropriate, and unused privileges  - when one is granted db privileges that exceed the requirements of their job function, one can abuse these priviliges. Ie a HR rep could look up someone's salary when their job is to only update time-off information.
+		2. Privilege abuse  - Users misues priviliege service accounts to access sensitive data directly, by bypassing the application's interface
+		3. Insufficient web application security - most organizations rely on apps to interface with customers. There are many types of attacks on apps that can expose data. Two most common are SQL injection and Web Shell. 
+		4. Weak audit trails - The failure to monitor for both security and compliance anomalies and collect the appropriate audit details of database activity represents a serious organizational risk at many levels.
+		5. Unsecured storage media - Numerous security breaches have involved the theft or incidental exposure of database backup disks and tapes. Taking the appropriate measures to protect backup copies of sensitive data is not only a data security best practice, but also mandated by many regulations.
+	
