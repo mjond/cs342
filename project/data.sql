@@ -17,6 +17,18 @@ INSERT INTO UserAccount VALUES (9, 'champion', 'chicagobulls', 'medium', 'Dwight
 INSERT INTO UserAccount VALUES (10, 'realPlayer', 'bostonceltics', 'expert', 'David', 'Wallace', 1970);
 INSERT INTO UserAccount VALUES (11, 'Wayne89', '111gandalf111', 'beginner', 'Todd', 'Packer', 1959);
 INSERT INTO UserAccount VALUES (12, 'newPlayer', 'bilboBaggins', 'beginner', 'Andy', 'Bernard', 1980);
+INSERT INTO UserAccount VALUES (13, 'lastPlayer', 'frodoBaggins', 'expert', 'Tom', 'Bind', 1889);
+INSERT INTO UserAccount VALUES (14, 'secondPlayer', 'pass', 'legend', 'Sam', 'Wise', 1989);
+INSERT INTO UserAccount VALUES (15, 'legendOfZelda', 'nope', 'beginner', 'tom', 'thomson', 2004);
+INSERT INTO UserAccount VALUES (16, 'marioKart', 'luigi', 'beginner', 'Carey', 'Price', 2009);
+INSERT INTO UserAccount VALUES (17, 'super', 'luigi', 'medium', 'John', 'Johnson', 2001);
+INSERT INTO UserAccount VALUES (18, 'super', 'luigi', 'beginner', 'John', 'Johnson', 2002);
+INSERT INTO UserAccount VALUES (19, 'use0123', 'newbie', 'medium', 'markus', 'davis', 1999);
+INSERT INTO UserAccount VALUES (20, 'c++', 'javaScript', 'legend', 'Anonymous', 'Anonymous', 1776);
+INSERT INTO UserAccount VALUES (21, 'Ruby', 'Lisp', 'beginner', 'Thomas', 'Shelby', 2001);
+INSERT INTO UserAccount VALUES (22, 'C#', 'Python', 'expert', 'Arthur', 'Shelby', 1997);
+INSERT INTO UserAccount VALUES (23, 'Go', 'google', 'expert', 'Grace', NULL, 1996);
+INSERT INTO UserAccount VALUES (24, 'BeginnerHockeyPlayer', 'whatispassword', 'medium', NULL, NULL, NULL);
 
 ----------------------------------------------------------------------------
 
@@ -41,6 +53,18 @@ INSERT INTO Team VALUES (9, 'Hockey Team', 5, 'fantasy');
 INSERT INTO Team VALUES (10, 'Justice League', 5, 'fantasy');
 INSERT INTO Team VALUES (11, 'What is Losing', 5, 'fantasy');
 INSERT INTO Team VALUES (12, 'Avengers', 5, 'fantasy');
+INSERT INTO Team VALUES (13, 'nope', 0, 'fantasy');
+INSERT INTO Team VALUES (14, 'yes', 0, 'fantasy');
+INSERT INTO Team VALUES (15, 'maybe', 0, 'fantasy');
+INSERT INTO Team VALUES (16, 'posssibly', 0, 'fantasy');
+INSERT INTO Team VALUES (17, 'Impossible', 0, 'fantasy');
+INSERT INTO Team VALUES (18, 'Possible', 0, 'real');
+INSERT INTO Team VALUES (19, 'NULL', 0, 'fantasy');
+INSERT INTO Team VALUES (20, NULL, 0, 'fantasy');
+INSERT INTO Team VALUES (21, 'Lighting', 0, 'real');
+INSERT INTO Team VALUES (22, 'teamNameHere', 0, 'fantasy');
+INSERT INTO Team VALUES (23, 'Thunder', 0, 'fantasy');
+INSERT INTO Team VALUES (24, 'Grass', 0, 'fantasy');
 
 ------------------------------------------------------------------------------
 
@@ -148,6 +172,7 @@ INSERT INTO Goalie VALUES (9, 'Kelly', 'Capore', 0.517, 4);
 INSERT INTO Goalie VALUES (10, 'Jimmy', 'Buffet', 0.917, 10);
 INSERT INTO Goalie VALUES (11, 'Conan', 'OBrian', 0.988, 11);
 INSERT INTO Goalie VALUES (12, 'Aqua', 'Man', 0.989, 12);
+INSERT INTO Goalie VALUES (13, 'Who', 'Knows', 0.001, 13);
 
 ------------------------------------------------------------------------
 
