@@ -38,6 +38,13 @@ select t.name, p.firstName, p.lastName
 from Player p left outer join Team t
 on t.id = p.teamId;
 
+--NULL query
+--this is helpful to find players who are not on a team so they can be assigned to a team
+--this query returns all players whose teamId is NULL
+select id, firstName, lastName
+from Player
+where teamId is null;
+
 --non-materialized view
 --I chose materialized because the user's will get results faster when queried
 --this is helpful to users to query to find out information of players and their teams
@@ -45,3 +52,5 @@ create materialized view playerTeam as
 	select p.firstName, p.lastName, p.id, p.goals, p.assists, p.teamId, t.name, t.type
 	from Player p, Team t
 	where p.teamId=t.id;
+
+drop materialized view playerTeam;
