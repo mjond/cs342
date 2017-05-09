@@ -97,8 +97,8 @@ INSERT INTO Player VALUES (24, 'Phyllis', 'Vance', 0, 17, 'forward', 4);
 INSERT INTO Player VALUES (25, 'Toby', 'Flenderson', 0, 5, 'defense', 4);
 
 --Corporate
-INSERT INTO Player VALUES (26, 'Jan', 'Levinson', 2, 1, 'forward', 5);
-INSERT INTO Player VALUES (27, 'Mr.', 'Boss', 1, 2, 'defense', 5);
+INSERT INTO Player VALUES (26, 'Todd', 'Packer', 2, 1, 'forward', 5);
+INSERT INTO Player VALUES (27, 'Boss.', 'Boss', 1, 2, 'defense', 5);
 
 --Calvin College
 INSERT INTO Player VALUES (28, 'Pastor', 'Mary', 4, 9, 'forward', 6);
@@ -156,7 +156,6 @@ INSERT INTO Player VALUES (60, 'Sam', 'Samson', 0, 3, 'defense', NULL);
 INSERT INTO Player VALUES (61, 'Spider', 'Man', 23, 30, 'rover', NULL);
 INSERT INTO Player VALUES (62, 'Dr.', 'Oz', 78, 95, 'forward', NULL);
 
-
 ------------------------------------------------------------------------
 
 --Goalies
@@ -202,6 +201,17 @@ INSERT INTO Game VALUES (11, 9, 11, 11, 0, 4);
 INSERT INTO Game VALUES (12, 3, 6, 3, 3, 1);
 INSERT INTO Game VALUES (13, 14, 17, 14, 2, 1);
 INSERT INTO Game VALUES (14, 12, 21, 21, 2, 3);
+INSERT INTO Game VALUES (14, 12, 21, 21, 2, 3);
+INSERT INTO Game VALUES (15, 16, 19, 19, 2, 5);
+INSERT INTO Game VALUES (16, 18, 13, 18, 7, 5);
+INSERT INTO Game VALUES (17, 22, 23, 22, 1, 0);
+INSERT INTO Game VALUES (18, 20, 23, 23, 1, 4);
+INSERT INTO Game VALUES (19, 7, 24, 7, 3, 2);
+INSERT INTO Game VALUES (20, 5, 14, 14, 3, 7);
+INSERT INTO Game VALUES (21, 18, 9, NULL, 0, 0);
+INSERT INTO Game VALUES (22, 19, 10, 10, 0, 2);
+INSERT INTO Game VALUES (23, 13, 22, 13, 4, 2);
+INSERT INTO Game VALUES (24, 8, 23, 23, 1, 2);
 
 -----------------------------------------------------------------------
 
@@ -246,3 +256,15 @@ INSERT INTO GameComment VALUES (9, 9, 9, 'thank you');
 INSERT INTO GameComment VALUES (10, 10, 10, 'no comment');
 INSERT INTO GameComment VALUES (11, 9, 1, 'no fair');
 INSERT INTO GameComment VALUES (12, 7, 7, 'good game');
+INSERT INTO GameComment VALUES (13, 14, 14, 'Get a better goalie');
+INSERT INTO GameComment VALUES (14, 3, 22, 'Rogers Centre');
+INSERT INTO GameComment VALUES (15, 22, 5, 'Air Canada Centre');
+INSERT INTO GameComment VALUES (16, 12, 15, 'no thanks');
+INSERT INTO GameComment VALUES (17, 17, 19, 'huzzah');
+INSERT INTO GameComment VALUES (18, 8, 23, 'cool game');
+INSERT INTO GameComment VALUES (19, 23, 21, 'losers');
+INSERT INTO GameComment VALUES (20, 15, 13, 'this is a comment');
+INSERT INTO GameComment VALUES (21, 20, 8, 'great goal');
+INSERT INTO GameComment VALUES (22, 7, 24, 'go blue jays');
+INSERT INTO GameComment VALUES (23, 23, 23, 'playoffs');
+INSERT INTO GameComment VALUES (24, 22, 22, 'good basketball');
