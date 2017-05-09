@@ -173,6 +173,17 @@ INSERT INTO Goalie VALUES (10, 'Jimmy', 'Buffet', 0.917, 10);
 INSERT INTO Goalie VALUES (11, 'Conan', 'OBrian', 0.988, 11);
 INSERT INTO Goalie VALUES (12, 'Aqua', 'Man', 0.989, 12);
 INSERT INTO Goalie VALUES (13, 'Who', 'Knows', 0.001, 13);
+INSERT INTO Goalie VALUES (14, 'David', 'Davidson', 0.002, 14);
+INSERT INTO Goalie VALUES (15, 'Johnny', 'Cash', 0.771, 15);
+INSERT INTO Goalie VALUES (16, 'Chris', 'Martin', 0.781, 16);
+INSERT INTO Goalie VALUES (17, 'Jon', 'Doe', 0.888, 17);
+INSERT INTO Goalie VALUES (18, 'Hen', 'Hen', 0.678, 18);
+INSERT INTO Goalie VALUES (19, 'I', 'I', 0.981, 19);
+INSERT INTO Goalie VALUES (20, 'W', 'Wins', 0.681, 20);
+INSERT INTO Goalie VALUES (21, 'Ian', 'Ians', 0.755, 21);
+INSERT INTO Goalie VALUES (22, 'Tom', 'Williams', 0.455, 22);
+INSERT INTO Goalie VALUES (23, 'Great', 'Scott', 0.876, 23);
+INSERT INTO Goalie VALUES (24, 'Greg', 'Gregory', 0.786, 24);
 
 ------------------------------------------------------------------------
 
@@ -189,6 +200,8 @@ INSERT INTO Game VALUES (9, 11, 5, 5, 2, 3);
 INSERT INTO Game VALUES (10, 2, 12, 12, 3, 25);
 INSERT INTO Game VALUES (11, 9, 11, 11, 0, 4);
 INSERT INTO Game VALUES (12, 3, 6, 3, 3, 1);
+INSERT INTO Game VALUES (13, 14, 17, 14, 2, 1);
+INSERT INTO Game VALUES (14, 12, 21, 21, 2, 3);
 
 -----------------------------------------------------------------------
 
@@ -205,6 +218,18 @@ INSERT INTO UserTeam VALUES (9, 9);
 INSERT INTO UserTeam VALUES (10, 10);
 INSERT INTO UserTeam VALUES (11, 11);
 INSERT INTO UserTeam VALUES (12, 12);
+INSERT INTO UserTeam VALUES (13, 13);
+INSERT INTO UserTeam VALUES (14, 14);
+INSERT INTO UserTeam VALUES (15, 15);
+INSERT INTO UserTeam VALUES (16, 16);
+INSERT INTO UserTeam VALUES (17, 17);
+INSERT INTO UserTeam VALUES (18, 18);
+INSERT INTO UserTeam VALUES (19, 19);
+INSERT INTO UserTeam VALUES (20, 20);
+INSERT INTO UserTeam VALUES (21, 21);
+INSERT INTO UserTeam VALUES (22, 22);
+INSERT INTO UserTeam VALUES (23, 23);
+INSERT INTO UserTeam VALUES (23, 23);
 
 -----------------------------------------------------------------------
 
