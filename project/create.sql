@@ -20,8 +20,8 @@ GRANT
 	CREATE PROCEDURE,
 	CREATE TRIGGER,
 	UNLIMITED TABLESPACE
-	TO system;
+	TO hockey;
 
-CONNECT system/MonkeyHat8;
+CONNECT hockey/MonkeyHat8;
 
 @load
