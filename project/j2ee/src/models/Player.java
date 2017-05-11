@@ -1,9 +1,6 @@
 package models;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by mjd85 on 5/11/2017.
@@ -16,6 +13,29 @@ public class Player {
     private Long goals;
     private Long assists;
     private String position;
+
+    /**
+     * Many to One method
+     * Project Extension
+     */
+    @ManyToOne
+    @JoinColumn(name = "TEAMID", referencedColumnName = "ID")
+    private Team team;
+    public Team getTeam() {return team};
+
+    public void setTeam(Team team) { this.team = team; }
+
+    /**
+     * Many to Many method
+     * Project Extension
+     */
+    @ManyToMany
+    @JoinTable(name = "PERSONTEAM", schema = "project",
+            joinColumns = @JoinColumn(name = "PLAYERID", referencedColumnName = "ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "TEAMNAME", referencedColumnName = "NAME", nullable = false))
+    public void List<Team> getTeams() {return team;}
+
+    public void setTeam(List<Team> team) {this.team = team; }
 
     @Id
     @Column(name = "ID")
