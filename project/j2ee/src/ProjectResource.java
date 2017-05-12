@@ -11,8 +11,7 @@ import models.Player;
  * This stateless session bean serves as a RESTful resource handler for the CPDB.
  * It uses a container-managed entity manager.
  *
- * @author kvlinden
- * @version Spring, 2017
+
  */
 @Stateless
 @Path("project")
