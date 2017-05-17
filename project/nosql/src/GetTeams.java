@@ -7,6 +7,12 @@ import java.util.*;
  */
 public class GetTeams {
 
+    /**
+     * @author Mark Davis
+     * @param args
+     * @throws SQLException
+     * This method gets values from the kvstore and stores in a hashmap
+     */
     public static void main(String[] args) throws SQLException {
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
 
@@ -29,6 +35,12 @@ public class GetTeams {
         store.close();
     }
 
+    /**
+     * @author Mark Davis
+     * @param id
+     * @param store
+     * This method gets the key-value pairs and stores in a map
+     */
     public static String getFields(String id, KVStore store) {
         String temp="";
         Key majorKeyPath = Key.createKey(Arrays.asList("team, playerID)"));

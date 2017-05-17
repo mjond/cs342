@@ -2,12 +2,11 @@ Mark Davis
 February 9, 2017
 CS342
 
-My information system project will be a NHL fantasy hockey. It will contain players, teams, positions, games, scores and more.
-The stakeholders will be people interested in learning statistics about a team or
-people who want to make their own team and play other teams.
+My information system project will be a NHL fantasy hockey. It will contain players, teams, positions, games, scores, user accounts and statistics about the players.
+Information about games will also be stored such as points scored, winner and user's comments on games. 
+The stakeholders will be people interested in learning statistics about a team or people who want to make their own team and play other teams.
 Administrators will also be a stakeholder in order to keep the database maintained and updated. 
 
-Right now, the tables are: Team, Player, Game, and User. Referential integrity will be important to maintain with all the relations between tables. 
-Allow users to log in and make comments and create a team. 
+Right now, the tables are: Team, UserAccount, Player, Goalie, UserTeam, Game and GameComment. Referential integrity will be important to maintain with all the relations between tables. 
 Entity integrity will be important as well. For example, a player could play multiple positions on a team. 
-This domain is different than ones discussed in class. 
+This domain is different than ones discussed in class. Most tables are in 4NF.

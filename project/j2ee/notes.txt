@@ -1,0 +1,2 @@
+This application is useful for developers to use if this database was going on a web service. Then the web service
+could use these project functions to carry out operations on the tables.

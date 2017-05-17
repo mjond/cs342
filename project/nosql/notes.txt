@@ -1,0 +1,3 @@
+KVLite is not the best type of system to use for this application. The Oracle relational system is best because
+all tables are in 4th normal form. There isn't really a reason to use a key-value system since I would only be using
+the tables' primary key as the key in the key-value system.

@@ -45,6 +45,22 @@ select id, firstName, lastName
 from Player
 where teamId is null;
 
+--self-join
+--this is helpful to get players not on the same team 
+--this query returns players first names and last names
+select p1.firstName, p1.lastName, p2.firstName, p2.lastName
+from Player p1, Player p2
+where p1.teamId <> p2.teamId;
+
+--outer inner combo
+--this is helpful to retrieve all users with their teams and players - players are still returned even if they're not on a team 
+--this query returns user names, team names, player names
+select ua.username, t.name, p.firstName, p.lastName 
+from Player p left outer join Team t on p.teamId = t.id
+inner join ua UserAccount, ut UserTeam
+	ua.id = ut.userId and
+	t.id = ut.teamId;
+
 --non-materialized view
 --I chose materialized because the user's will get results faster when queried
 --this is helpful to users to query to find out information of players and their teams

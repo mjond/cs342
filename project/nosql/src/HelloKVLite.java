@@ -19,7 +19,8 @@ import java.util.List;
  * all tables are in 4th normal form. There isn't really a reason to use a key-value system since I would only be using
  * tables' primary keys as the key in the key-value system.
  *
- * @author mjd85 with code from kvlinden
+ * @author mjd85
+ * @author kvlinden
  */
 public class HelloKVLite {
     private static KVStore store;
@@ -36,6 +37,13 @@ public class HelloKVLite {
         store.close();
     }
 
+    /**
+     * This method gets players and adds to the kvLite store with key-value
+     * This uses an information query - it holds useful information for each player
+     * This query also uses useful two-table join.
+     * @author Mark Davis
+     * @throws SQLException
+     */
     private static void getPlayers() throws SQLException {
         Statement jdbcStatement = jdbcConnection.createStatement();
         ResultSet resultSet = jdbcStatement.executeQuery("SELECT p.id, p.firstName, p.lastName t.name FROM Player p, Team t WHERE p.teamId=t.id");
@@ -68,6 +76,12 @@ public class HelloKVLite {
         }
     }
 
+    /**
+     * This method gets all teams from the team table and stores in kvLite store using key-value system
+     * This uses a useful information query that stores information team from each team
+     * @author Mark Davis
+     * @throws SQLException
+     */
     private static void getTeams() throws SQLException {
         Statement jdbcStatement = jdbcConnection.createStatement();
         ResultSet resultSet = jdbcStatement.executeQuery("SELECT id, name, numberOfPlayers, type FROM Team");
